@@ -1,0 +1,30 @@
+<a class="py-4 lg:py-8 px-8 lg:px-20" href="/dashboard">&larr; Back</a>
+<div class="py-4 lg:py-8 px-8 lg:px-20">
+    <h2>Add New Blog</h2>
+</div>
+
+<%= typeof msg != 'undefined' ? msg : '' %>
+
+<form class="py-4 lg:py-8 px-8 lg:px-20" action="/add-post" method="POST"  enctype="multipart/form-data">
+
+    <label for="image" class="form-label">Select Image</label>
+    <input class="form-control form-control-lg" type="file" name="image">
+    <br>
+    
+    <label for="title"><b>Title</b></label>
+    <input type="text" placeholder="Blog Title" name="title">
+
+    <label for="body"><b>Content</b></label>
+    <textarea class="p-4" id="textarea" name="body" placeholder="Add blog content here"></textarea>
+
+    <button 
+        type="submit"
+        class="py-2 px-4 mt-4 rounded bg-blue-800 text-white hover:rounded-full transition duration-300"
+    >
+        Add
+    </button>
+
+</form>
+<br>
+<img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img">
+

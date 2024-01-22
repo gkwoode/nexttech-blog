@@ -1,0 +1,33 @@
+<a class=" py-4 lg:py-8 px-8 lg:px-20" href="/dashboard">&larr; Back</a>
+<div class="admin-title py-4 lg:py-8 px-8 lg:px-20">
+    <h2>View / Edit Blog</h2>
+
+    <form action="/delete-post/<%= data._id %>?_method=DELETE" method="POST">
+        <button 
+            type="submit"
+            class="py-2 px-4 rounded bg-blue-800 text-white hover:rounded-full transition duration-300"
+        >
+            Delete
+        </button>
+    </form>
+
+</div>
+
+<div class="py-4 lg:py-8 px-8 lg:px-20">
+    <form action="/edit-post/<%= data._id %>?_method=PUT" method="POST">
+
+        <label for="title"><b>Title</b></label>
+        <input type="text" placeholder="Blog Title" name="title" value="<%= data.title %>">
+    
+        <label for="body"><b>Content</b></label>
+        <textarea class="p-4" id="textarea" name="body" cols="50" rows="10"><%= data.body %></textarea>
+    
+        <button 
+            type="submit"
+            class="py-2 px-4 mt-4 rounded bg-blue-800 text-white hover:rounded-full transition duration-300"
+        >
+            Update
+        </button>
+    
+    </form>
+</div>

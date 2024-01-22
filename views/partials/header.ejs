@@ -1,0 +1,55 @@
+<nav class="w-full sticky top-0 z-50 flex justify-between bg-slate-900 border-b items-center py-4 lg:py-8 px-8 lg:px-20 text-white">
+    <div class="container mx-auto flex items-center justify-between">
+        <a href="/" class="md:text-2xl text-lg flex items-center justify-between">
+            <img src="/img/NextTechBlog.png" alt="NextTech Blog Logo" class="h-8 lg:h-10 mr-2">
+            <span>NextTech Blog</span>
+        </a>
+        
+        <!-- Desktop Nav  -->
+        <div class="hidden md:flex space-x-8">
+            <a href="/" class="nav-link hover:underline"  id="home-link">Home</a>
+            <a href="/about" class="nav-link hover:underline" id="about-link">About</a>
+            <a href="/contact" class="nav-link hover:underline" id="contact-link">Contact</a>
+            <a href="/register" class="nav-link hover:underline" id="register-link">Sign-Up</a>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Search Bar Toggle -->
+        <div class="">
+            <button id="toggle-search-button" class="text-white">
+                Search
+            </button>
+        </div>
+
+    </div>
+
+    
+</nav>
+
+<!-- Search Bar -->
+<div class="fixed z-10 mt-1 hidden w-full px-8 lg:px-20" id="search-field">
+    <div class="mt-0 w-full bg-transparent">
+        <input 
+            type="text" 
+            class="w-full ring text-gray-800 border rounded transition focus:outline-none p-2 focus:border-slate-900" 
+            placeholder="Search here"
+            autofocus="autofocus"
+        >
+    </div>
+</div>
+
+<!-- Mobile Nav -->
+<div id="mobile-menu" class="md:hidden z-10 hidden fixed w-full bg-slate-900 p-4 text-white border-b-2">
+    <a href="/" class="block mb-2">Home</a>
+    <a href="/about" class="block mb-2">About</a>
+    <a href="/contact" class="block mb-2">Contact</a>
+    <a href="/register" class="block mb-2">Sign-Up</a>
+</div>

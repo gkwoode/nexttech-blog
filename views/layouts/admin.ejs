@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <meta name="description" content="<%= locals.description %>">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script type="text/javascript" defer src="/js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/output.css">
+    <script src="https://kit.fontawesome.com/2062793313.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <%- include('../partials/header_admin.ejs') %>
+        <main class="main">
+            <%- body %>
+        </main>
+    </div>
+
+    <!-- tinymce for body text -->
+    <script type="text/javascript" src="/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#textarea',
+            weight: 1000,
+            height: 500,
+            menubar: false,
+            branding: false,
+            plugins: [
+                'advlist', 'autolink', 'lists', 'link', 
+                'image', 'charmap', 'print', 'preview', 
+                'hr', 'anchor', 'pagebreak', 'searchreplace',
+                'wordcount', 'visualblocks', 'visualchars',
+                'code', 'fullscreen', 'insertdatetime', 'media',
+                'nonbreaking', 'save', 'table', 'directionality',
+                'emoticons', 'template', 'paste', 'textcolor',
+                'colorpicker', 'textpattern', 'toc', 'help',
+                'autocorrect', 'autosave', 'spellchecker', 'imagetools'
+            ],
+            toolbar: 'undo redo | styles | bold italic underline |' +
+             'formatselect | alignleft aligncenter alignright alignjustify |' +
+             'bullist numlist outdent indent | link image | print preview media fullpage |' +
+             'forecolor backcolor emoticons | code | save',
+            menu: {
+                favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}
+            },
+            menubar: 'favs file edit view insert format tools table help',
+           // content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+            toolbar_mode: 'floating',
+            autosave_interval: '10s',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+        });
+      </script>
+</body>
+</html>
